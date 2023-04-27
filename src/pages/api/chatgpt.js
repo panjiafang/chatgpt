@@ -22,7 +22,7 @@ export default async function handler(req, res) {
     try {
         const response = await openai.createChatCompletion({
             model: "gpt-3.5-turbo",
-            messages: messages,
+            messages: JSON.parse(messages),
         }, { timeout: 10000 });
         res.status(200).json(response);
     } catch (err) {
