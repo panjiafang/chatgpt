@@ -9,8 +9,7 @@ export default function Chat() {
         console.log('getChat')
         const response = await fetch('/api/chatgpt', {
             method: 'POST',
-            body: JSON.stringify({
-                messages: [
+            body: JSON.stringify( [
                     {
                         "role": "system",
                         "message": "Your name is John",
@@ -20,7 +19,7 @@ export default function Chat() {
                         "message": "What is your name?",
                     }
                 ]
-            })
+            )
         })
         const data = await response.json()
         console.log(data)

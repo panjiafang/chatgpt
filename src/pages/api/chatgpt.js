@@ -18,7 +18,7 @@ const openai = new OpenAIApi(configuration);
 
 export default async function handler(req, res) {
     console.log("handler:", req.body);
-    const messages = req.body.messages;
+    const messages = JSON.parse(req.body);
     console.log("messages:", messages)
     try {
         const response = await openai.createChatCompletion({
