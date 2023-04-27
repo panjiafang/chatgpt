@@ -23,7 +23,7 @@ export default function Chat() {
           });
 
           const data = await response.json();
-          // console.log(data.choices[0].message);
+          console.log(data.choices[0].message);
 
           // var resMessage = data.choices[0].message;
           // messages.push(resMessage)

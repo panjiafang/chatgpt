@@ -31,7 +31,7 @@ export default async function handler(req, res) {
 
         // const response = await openai.listModels({ timeout: 10000, proxy: {host: "127.0.0.1", port: 7890} });
 
-        console.log(response.data)
+        console.log(response.data.choices)
         res.status(200).json(response.data);
     } catch (err) {
         console.log(err);
