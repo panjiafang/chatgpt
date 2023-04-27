@@ -19,10 +19,11 @@ const openai = new OpenAIApi(configuration);
 export default async function handler(req, res) {
     console.log("handler:", req.body);
     const messages = req.body.messages;
+    console.log("messages:", messages)
     try {
         const response = await openai.createChatCompletion({
             model: "gpt-3.5-turbo",
-            messages: JSON.parse(messages),
+            messages: messages,
         }, { timeout: 10000 });
         res.status(200).json(response);
     } catch (err) {
